@@ -25,6 +25,10 @@ set cmdheight=2
 set winwidth=80
 set laststatus=2
 
+" Easy window splits
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
+
 " Command display
 set showmode
 set showcmd
@@ -63,6 +67,7 @@ Bundle 'tpope/vim-markdown'
 " Utils
 Bundle 'vim-scripts/paredit.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " nerdtree config
 let NERDTreeShowHidden=1 " display hidden files
