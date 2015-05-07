@@ -19,7 +19,7 @@
     changed = yellow
     untracked = red
 [core]
-    pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+    pager = less -F -X
     editor = vim
 [alias]
     ca        = commit --amend --reuse-message=HEAD
