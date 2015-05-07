@@ -64,6 +64,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/paredit.vim'
 Bundle 'scrooloose/nerdtree'
 
+" nerdtree config
+let NERDTreeShowHidden=1 " display hidden files
 
 " Naughty use of arrow keys removed
 map <Left> <Nop>
