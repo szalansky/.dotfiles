@@ -11,8 +11,8 @@ set expandtab
 
 " Formatting
 set shiftwidth=2
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
 set numberwidth=5
 set encoding=utf-8
 
