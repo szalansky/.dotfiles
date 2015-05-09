@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # slightly modified bash-powerline: https://github.com/riobard/bash-powerline
+# make sure you use xterm 256 colors (iTerm2 > preferences)
 __powerline() {
 
     # Unicode symbols
