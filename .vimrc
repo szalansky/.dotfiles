@@ -53,7 +53,7 @@ call vundle#rc()
 " Clojure
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-classpath'
+" Bundle 'tpope/vim-classpath'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
