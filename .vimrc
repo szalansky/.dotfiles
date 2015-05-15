@@ -65,6 +65,7 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-markdown'
 
 " Utils
+Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/paredit.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'christoomey/vim-tmux-navigator'
