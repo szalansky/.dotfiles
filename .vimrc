@@ -4,6 +4,7 @@ filetype off
 set history=1000
 set shell=bash
 filetype plugin indent on
+set number
 
 " Editing
 set autoindent
