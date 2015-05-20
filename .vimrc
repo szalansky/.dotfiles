@@ -2,7 +2,7 @@
 set nocompatible " use vim settings instead of vi
 filetype off
 set history=1000
-set shell=zsh
+set shell=bash
 filetype plugin indent on
 
 " Editing
