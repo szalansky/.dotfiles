@@ -71,8 +71,15 @@ Bundle 'vim-scripts/paredit.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'christoomey/vim-tmux-navigator'
 
+" Search and file browsing
+Bundle 'rking/ag.vim'
+Bundle 'kien/ctrlp.vim'
+
 " nerdtree config
 let NERDTreeShowHidden=1 " display hidden files
+
+" ctrlp setup
+let g:ctrlp_working_path_mode = 'ra'
 
 " Naughty use of arrow keys removed
 map <Left> <Nop>
