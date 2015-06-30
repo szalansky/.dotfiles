@@ -61,6 +61,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-fugitive'
 
 " Markdown
 Bundle 'tpope/vim-markdown'
