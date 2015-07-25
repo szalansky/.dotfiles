@@ -39,7 +39,6 @@ set hlsearch
 set incsearch
 
 " Colouring and syntax highlighting
-
 syntax enable
 set background=dark
 set t_Co=256
@@ -61,7 +60,9 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-fugitive'
+
+" Golang
+Bundle 'faith/vim-go'
 
 " Markdown
 Bundle 'tpope/vim-markdown'
@@ -72,6 +73,9 @@ Bundle 'vim-scripts/paredit.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'christoomey/vim-tmux-navigator'
 
+" Syntax hinting
+Bundle 'scrooloose/syntastic'
+
 " Search and file browsing
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
@@ -81,6 +85,14 @@ let NERDTreeShowHidden=1 " display hidden files
 
 " ctrlp setup
 let g:ctrlp_working_path_mode = 'ra'
+
+" go specific settings
+au BufNewFile,BufRead *.go set ft=go
+au BufNewFile,BufRead *.go set noexpandtab
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+
+
 
 " Naughty use of arrow keys removed
 map <Left> <Nop>
