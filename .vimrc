@@ -67,6 +67,10 @@ Bundle 'faith/vim-go'
 " Markdown
 Bundle 'tpope/vim-markdown'
 
+" Yaml, Ansible
+Bundle 'ingydotnet/yaml-vim'
+Bundle 'chase/vim-ansible-yaml'
+
 " Utils
 Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/paredit.vim'
