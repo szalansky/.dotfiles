@@ -83,6 +83,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 
+" Tmux integrations
+Bundle "epeli/slimux"
+
 " nerdtree config
 let NERDTreeShowHidden=1 " display hidden files
 
