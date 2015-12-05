@@ -3,7 +3,6 @@ set nocompatible " use vim settings instead of vi
 filetype off
 set history=1000
 set shell=bash
-filetype plugin indent on
 set number
 
 " Editing
@@ -66,6 +65,9 @@ Bundle 'tpope/vim-cucumber'
 " Markdown
 Bundle 'tpope/vim-markdown'
 
+" JSON
+Bundle 'jiangmiao/auto-pairs'
+
 " Yaml, Ansible
 Bundle 'ingydotnet/yaml-vim'
 Bundle 'chase/vim-ansible-yaml'
@@ -75,6 +77,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/paredit.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'elzr/vim-json'
 
 " Syntax hinting
 Bundle 'scrooloose/syntastic'
@@ -85,6 +88,13 @@ Bundle 'kien/ctrlp.vim'
 
 " Tmux integrations
 Bundle "epeli/slimux"
+
+" AWS
+Bundle 'https://github.com/m-kat/aws-vim'
+
+" Snippets
+Bundle 'honza/vim-snippets'
+Bundle 'SirVer/ultisnips'
 
 " nerdtree config
 let NERDTreeShowHidden=1 " display hidden files
@@ -101,6 +111,23 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" ultisnips
+"   Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"   If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" aws-vim
+let g:AWSVimValidate = 1
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.vim/bundle/aws-vim/snips"]
+let g:AWSSnips = "Alarm Authentication Base64 CreationPolicy FindInMap GetAtt Init Instance InstanceProfile Join LaunchConfiguration LoadBalancer Param Policy RDSIngress Ref Role SGEgress SGIngress ScalingPolicy ScheduledAction SecurityGroup Select Stack Subnet VPC Volume VolumeAttachment WaitCondition WaitConditionHandle asg cft init_command init_file init_group init_user"
+
+" Indent must come after everything is loaded
+filetype plugin indent on
 
 " Naughty use of arrow keys removed
 map <Left> <Nop>
