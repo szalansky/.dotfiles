@@ -3,6 +3,7 @@ set nocompatible " use vim settings instead of vi
 filetype off
 set history=1000
 set shell=bash
+filetype plugin indent on
 set number
 
 " Editing
@@ -52,9 +53,10 @@ highlight ColorColumn ctermbg=7
 highlight ColorColumn guibg=Gray
 
 " Clojure
-Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
-" Bundle 'tpope/vim-classpath'
+"   Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+Bundle 'guns/vim-clojure-highlight'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -75,6 +77,7 @@ Bundle 'chase/vim-ansible-yaml'
 " Utils
 Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/paredit.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
@@ -126,11 +129,58 @@ let g:AWSVimValidate = 1
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.vim/bundle/aws-vim/snips"]
 let g:AWSSnips = "Alarm Authentication Base64 CreationPolicy FindInMap GetAtt Init Instance InstanceProfile Join LaunchConfiguration LoadBalancer Param Policy RDSIngress Ref Role SGEgress SGIngress ScalingPolicy ScheduledAction SecurityGroup Select Stack Subnet VPC Volume VolumeAttachment WaitCondition WaitConditionHandle asg cft init_command init_file init_group init_user"
 
-" Indent must come after everything is loaded
-filetype plugin indent on
+"   guns/vim-clojure-static
+let g:clojure_align_multiline_strings = 1
+let g:clojure_align_subforms = 1
+" Legacy comma-delimited string version; the list format above is
+" " recommended. Note that patterns are implicitly anchored with ^ and $.
+let g:clojure_fuzzy_indent_patterns = 'with.*,def.*,let.*'"
+
+"   paredit config
+let g:paredit_electric_return = 1
+
+"   kien/rainbow_parentheses.vim
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+" Rainbow parentheses always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " Naughty use of arrow keys removed
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
+
+function! CljFix()
+  w!
+  set autoread
+  silent exec "! lein cljfmt fix ".expand('%')
+  redraw!
+  set noautoread
+  e!
+  w
+endf
+
+au Filetype clojure map <leader>f :silent call CljFix()<cr>
