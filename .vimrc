@@ -9,6 +9,7 @@ set number
 " Editing
 set autoindent
 set expandtab
+set backspace=2
 
 " Formatting
 set shiftwidth=2
