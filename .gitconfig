@@ -18,6 +18,8 @@
     added = green
     changed = yellow
     untracked = red
+[commit]
+    template = ~/.gitmessage
 [core]
     pager = less -F -X
     editor = vim
